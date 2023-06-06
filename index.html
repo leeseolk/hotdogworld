@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./footer.css">
+    <style>
+body {
+  background-image: url(img/back.jpg);
+  background-size: cover;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+  z-index: -2;
+}
+
+body::before {
+  content: "";
+  position: absolute;
+  opacity: 0.3;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(-45deg,black, #0B57A2,black, #2CD3C9,black, #6A94AC, #9b68ff,black);
+  background-size: 600% 600%;
+  animation: gradient 20s linear infinite;
+  z-index: -1;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+
+        .nav_hero_section {
+  display: flex;
+}
+
+.nav_hero_ul {
+  list-style-type: none;
+  gap: 1px;
+  line-height: 300%;
+}
+
+.nav_hero_list_item {
+  display: inline;
+}
+
+.nav_hero_hover_img_container {
+  display: flex;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(0%, -50%);
+  z-index: 9999;
+  opacity: 0;
+  transition: opacity 0.5s, visibility 2s;
+}
+
+.nav_headline_text {
+  font-size: 7rem;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.nav_headline_text:hover {
+  text-decoration: underline;
+}
+
+.nav_hero_list_item:hover .nav_hero_hover_img_container {
+  opacity: 1;
+}
+
+a{
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+}
+a:hover{
+  font-family: 'Playfair Display', serif;
+  color:  #6fffbc;
+}
+
+    </style>
+</head>
+<body>
+
+    <div class="nav_hero_section">
+        <div class="hero_list_container">
+          <ul class='nav_hero_ul'>
+            <li class="nav_hero_list_item">
+              <a href="Iceland.html"><h2 class="nav_headline_text"> Iceland →</h2></a>
+              <div class="nav_hero_hover_img_container">
+                <img class="hover_image" src="./img/iceland.jpg" alt="">
+              </div>
+            </li>
+            <li class="nav_hero_list_item">
+              <a href="Airline.html"><h2 class="nav_headline_text">Airline→ </h2></a>
+              <div class="nav_hero_hover_img_container">
+                <img class="hover_image" src="img/airline.jpg" alt="">
+              </div>
+          
+            </li>
+            <li class="nav_hero_list_item">
+              <a href="Restaurant.html"><h2 class="nav_headline_text"> Restaurant → </h2></a>
+              <div class="nav_hero_hover_img_container">
+                <img class="hover_image" src="img/res.jpg" alt="">
+              </div>
+            </li>
+            <li class="nav_hero_list_item">
+              <a href="tourist.html"><h2 class="nav_headline_text"> Tourist → </h2></a>
+              <div class="nav_hero_hover_img_container">
+                <img class="hover_image" src="img/ice3.jpg" alt="">
+              </div>
+            </li>
+            <li class="nav_hero_list_item">
+              <a href="Tip.html"><h2 class="nav_headline_text"> Tip → </h2></a>
+              <div class="nav_hero_hover_img_container">
+                <img class="hover_image" src="img/tip.jpg" alt="">
+              </div>
+            </li>
+          </ul>
+          
+       
+      </div>
+      </div>
+      <br>
+      <footer class="footer">
+        <article id="wrap">
+          <article id="lightings">
+              <section id="one">
+                    <section id="two">
+                        <section id="three">
+                            <section id="four">
+                                <section id="five">
+                                </section>
+                            </section>
+                        </section>
+                    </section>
+            </section>
+            </article>
+            <ul>     
+                <li><p class="p10"></p></li>
+              <li><p class="p11">PLZ - HOTDOG WORLD<br>based in Iceland copyright © 2023</p> </li>
+        
+              </ul>
+            </footer>
+</body>
+</html>

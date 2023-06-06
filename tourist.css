@@ -1,0 +1,228 @@
+@font-face {
+    font-family: 'Pretendard-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+  }
+  :root{
+    --color-light: #42f2a1;
+    --color-light--transparent: rgb(255, 255, 255);
+    --color-dark: #777;
+    --color-dark--transparent: #0007;
+    --color-gray: #ddd;
+  }
+  html,body{
+    background-color: rgb(0, 0, 0);
+    font-family: 'Nunito Sans', sans-serif;
+    min-height: 100vh;
+    width: 100%;
+  }
+  
+  h2{
+    font-family: 'Pretendard';
+    font-size: 3.5em;
+    font-weight: 500;
+    letter-spacing: -.035em;
+    line-height: 2;
+    margin-bottom: .5rem;
+    margin-left: -.25rem;
+  }
+  p{
+    font-family: 'Pretendard';
+    font-weight: 200;
+    hyphens: auto;
+    line-height: 1.5em;
+    margin-bottom: 1em;
+  }
+  
+  .img{
+    height: 100%;
+    object-fit: cover;
+    vertical-align: top;
+    width: 100%;
+  }
+  
+  label{
+    cursor: pointer;
+  }
+  
+  /* 
+  ==========================
+   MODULES
+  ==========================
+  */
+  
+  /* 
+  ==========================
+   SLIDE STYLE STARTS HERE
+  ==========================
+  */
+  
+  /* INPUT RADIO */
+  .input--none{
+    display: none;
+  }
+  
+  /* LAYOUT */
+  .container{
+    position: relative;
+  }
+  .inner{
+    height: 100vh;
+    transition: margin-left 500ms cubic-bezier(0.770, 0.000, 0.175, 1.000);
+    width: 400%;
+  }
+  .section{
+    overflow: hidden;
+  }
+  
+  /* SLIDE */
+  .slide{
+    background-position: 50% 25%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    float: left;
+    height: inherit;
+    padding: calc(2em + 6vh) 0 0 calc(3em + 6vw);
+    width: 25%;
+  }
+  .slide:nth-child(1){
+    background-image: linear-gradient(var(--color-dark--transparent), var(--color-dark--transparent)), 
+    url(img/tou1.jpg); 
+  }
+  .slide:nth-child(2){
+    background-image: linear-gradient(var(--color-dark--transparent), var(--color-dark--transparent)), 
+    url(img/tou2.jpg);
+  }
+  .slide:nth-child(3){
+    background-image: linear-gradient(var(--color-dark--transparent), var(--color-dark--transparent)), 
+    url(img/tou3.jpg);
+    background-position-y: 75%;
+  }
+  .slide:nth-child(4){
+    background-image: linear-gradient(var(--color-dark--transparent), var(--color-dark--transparent)), 
+    url(img/tou4.jpg);
+    background-position-x: 85%;
+  }
+  
+  /* SLIDE ANIMATION */
+  #slide1:checked ~ .section > .inner{
+    margin-left: 0;
+  } 
+  #slide2:checked ~ .section > .inner{
+    margin-left: -100%;
+  }
+  #slide3:checked ~ .section > .inner{
+    margin-left: -200%;
+  }
+  #slide4:checked ~ .section > .inner{
+    margin-left: -300%;
+  }
+  
+  /* SLIDE CONTENT */
+  .slide__content{
+    color:white;
+    max-width: 55em;
+    width: 75%;
+  }
+  
+  /* BULLETS | CONTROLS */
+  .bullets{
+    bottom: 1em;
+    left: 50%;
+    position: absolute;
+    text-align: center;
+    transform: translateX(-50%);
+  }
+
+
+  .controls{
+    top: 50%;
+    padding: 0 .5em;
+    position: absolute;
+    transform: translateY(-50%);
+    width: 100%;
+    
+  }
+  .controls label{
+    display: none;
+    height: 3em;
+    opacity: .5;
+    transition: 250ms ease-out;
+    width: 3em;
+
+  }
+  .controls label:hover{
+    opacity: 1;
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+  } 
+  
+  
+  #slide1:checked ~ .controls > label:nth-child(2),
+  #slide2:checked ~ .controls > label:nth-child(3),
+  #slide3:checked ~ .controls > label:nth-child(4),
+  #slide4:checked ~ .controls > label:nth-child(1){
+    background-blend-mode: screen;
+    background-color: var(--color-light);
+    background-image: url(img/tou1.jpg);
+    background-repeat: no-repeat;
+    display: block;
+    float: right;
+    -webkit-mask-image: url(img/tou1.jpg)
+  }
+  #slide1:checked ~ .controls > label:nth-last-child(1),
+  #slide2:checked ~ .controls > label:nth-last-child(4),
+  #slide3:checked ~ .controls > label:nth-last-child(3),
+  #slide4:checked ~ .controls > label:nth-last-child(2){
+    background-blend-mode: screen;
+    background-color: var(--color-light);
+    background-image: url(https://image.flaticon.com/icons/svg/860/860790.svg);
+    background-repeat: no-repeat;
+    display: block;
+    float: left;
+    -webkit-mask-image: url(https://image.flaticon.com/icons/svg/860/860790.svg)
+  }
+  
+
+    /* marquee태그 */
+    .marquee {
+      z-index: 1;
+      height: 60px;
+      width: 105%;
+      position: absolute;
+      background-image: linear-gradient(to bottom,rgb(2, 102, 22), rgb(0, 26,32, 0.2));
+    }
+    .marquee div {
+      display: block;
+      width:100%;
+      height: 50px;
+      position: absolute;
+  
+      animation: marquee 20s linear infinite;
+    }
+    
+    .marquee span {
+      color: #fff;
+      float: left;
+      width: 50%;
+    }
+    
+    @keyframes marquee {
+      0% { left: 0; }
+      100% { left: 100%; }
+    }
+  
+    .text{
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-weight: 100;
+      margin: 15px;
+      font-size: 1.5rem
+    }
